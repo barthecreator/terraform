@@ -4,4 +4,7 @@ provider "aws" {
 
 resource "aws_vpc" "Jenkins" {
   cidr_block = "10.92.0.0/16"
+  tags = {
+    Name = "Jenkins-TEST-VPC"
+  }
 }
