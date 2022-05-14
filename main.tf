@@ -39,6 +39,7 @@ resource "aws_instance" "VPC-A-EC2" {
   instance_type = "t2.micro"
   subnet_id = aws_subnet.Subnet-1.id
   key_name = data.aws_key_pair.my_key.key_name
+  security_groups = [aws_security_group.VPC-A-SG.id]
 
   tags = var.ec2_name
 }
@@ -52,4 +53,24 @@ resource "aws_route_table" "VPC-A-RT" {
     cidr_block = var.default-route
     gateway_id = aws_internet_gateway.IGW.id
   }
+    tags = var.rt-name
+}
+
+
+# Create Security Group
+
+resource "aws_security_group" "VPC-A-SG" {
+  name        = "allow_ssh"
+  description = "Allow SSH inbound traffic"
+  vpc_id      = aws_vpc.VPC-A.id
+
+  ingress {
+    description      = "SSH from My-PC"
+    from_port        = 0
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = [var.myip]
+  }
+  
+  tags = var.sg_name
 }
