@@ -34,3 +34,7 @@ variable "default-route" {
     type = string
   
 }
+
+variable "var_ami" {
+    type = string
+}
