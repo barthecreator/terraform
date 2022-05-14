@@ -16,3 +16,5 @@ ec2_name = {
 }
 
 default-route = "0.0.0.0/0"
+
+var_ami = "ami-0022f774911c1d690"
