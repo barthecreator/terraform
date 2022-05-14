@@ -18,3 +18,13 @@ ec2_name = {
 default-route = "0.0.0.0/0"
 
 var_ami = "ami-0022f774911c1d690"
+
+rt-name = {
+    Name = "VPC-A-RT"
+}
+
+myip = "213.57.59.193/32"
+
+sg_name = {
+    Name = "Security-Group-EC2"
+}
