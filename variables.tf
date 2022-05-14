@@ -38,3 +38,20 @@ variable "default-route" {
 variable "var_ami" {
     type = string
 }
+
+variable "rt-name" {
+    type = object({
+        Name = string
+    }) 
+}
+
+variable "myip" {
+    type = string
+}
+
+variable "sg_name" {
+    type = object({
+        Name = string
+    })
+  
+}
