@@ -67,8 +67,8 @@ resource "aws_security_group" "VPC-A-SG" {
   ingress {
     description      = "SSH from My-PC"
     from_port        = 0
-    to_port          = 22
-    protocol         = "tcp"
+    to_port          = 0
+    protocol         = "-1"
     cidr_blocks      = [var.myip]
   }
   
