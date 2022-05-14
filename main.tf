@@ -74,3 +74,10 @@ resource "aws_security_group" "VPC-A-SG" {
   
   tags = var.sg_name
 }
+
+# Associate Route table with Subnet
+
+resource "aws_route_table_association" "RT_ASSOCIATE" {
+  subnet_id      = aws_subnet.Subnet-1.id
+  route_table_id = aws_route_table.VPC-A-RT.id
+}
