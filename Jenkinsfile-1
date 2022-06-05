@@ -1,0 +1,18 @@
+pipeline {
+  agent {
+    docker { image 'bridgecrew/checkov:latest' }
+  }
+  stages {
+    stage('verify checkov') {
+      steps {
+        sh 'checkov --version'
+      }
+    }
+    stage('analyze terraform with checkov') {
+      steps {
+        sh 'checkov -d project'
+      }
+    }
+
+  }
+}
