@@ -6,9 +6,9 @@ agent {
     }
 }
   stages {
-    stage('check files') {
+    stage('CHECKOV ANALAYZE') {
       steps {
-        sh 'checkov -d project/ '
+        sh 'sudo checkov -d project/ '
       }
     }
  
