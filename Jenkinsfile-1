@@ -8,15 +8,10 @@ agent {
   stages {
     stage('check files') {
       steps {
-        sh 'ls '
+        sh 'checkov -d project/ '
       }
     }
  
-    stage('checkov analyze') {
-      steps {
-        sh 'checkov -d project/'
-      }
-    }
   }
 }
 
