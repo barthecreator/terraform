@@ -1,9 +1,15 @@
 pipeline {
   agent {
-    docker { image 'bridgecrew/checkov:2.0.888' }
+    docker { image 'bridgecrew/checkov:latest' }
   }
   stages {
-    stage('verify checkov') {
+    stage('check files') {
+      steps {
+        sh 'ls '
+      }
+    }
+ 
+    stage('checkov analyze') {
       steps {
         sh 'checkov -d project'
       }
