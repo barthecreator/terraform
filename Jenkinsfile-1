@@ -11,7 +11,7 @@ pipeline {
  
     stage('checkov analyze') {
       steps {
-        sh 'checkov -d project'
+        sh 'checkov -d project/'
       }
     }
   }
