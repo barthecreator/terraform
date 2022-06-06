@@ -8,6 +8,11 @@ pipeline {
         sh 'ls '
       }
     }
+    stage('checkov version') {
+      steps {
+        sh 'checkov --version'
+      }
+    }
  
     stage('checkov analyze') {
       steps {
