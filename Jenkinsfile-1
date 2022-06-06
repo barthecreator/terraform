@@ -1,16 +1,14 @@
 pipeline {
-  agent {
-    docker { image 'bridgecrew/checkov:latest' }
-  }
+agent {
+    docker {
+        image 'bridgecrew/checkov:latest'
+        args '-u 0'
+    }
+}
   stages {
     stage('check files') {
       steps {
         sh 'ls '
-      }
-    }
-    stage('checkov version') {
-      steps {
-        sh 'checkov --version'
       }
     }
  
@@ -21,3 +19,5 @@ pipeline {
     }
   }
 }
+
+
