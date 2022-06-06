@@ -8,7 +8,7 @@ agent {
   stages {
     stage('CHECKOV ANALAYZE') {
       steps {
-        sh 'sudo checkov -d project/ '
+        sh 'checkov -d project/ '
       }
     }
  
