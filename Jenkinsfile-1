@@ -1,13 +1,13 @@
 pipeline {
 agent {
     docker {
-        image 'bridgecrew/checkov:latest'
+        image 'tfsec/tfsec:latest'
     }
 }
   stages {
     stage('CHECKOV ANALAYZE') {
       steps {
-        sh 'checkov -d project/ '
+        sh 'tfsec . '
       }
     }
  
